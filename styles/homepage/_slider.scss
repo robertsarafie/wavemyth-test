@@ -17,9 +17,9 @@ main {
 
         .card {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 2fr 1fr;
           background-color: #2d333d;
-          border: 1px solid #181d26;
+          border: 1px solid $gray-secondary;
           min-height: 300px;
           border-radius: 5px;
           overflow: hidden;
@@ -88,11 +88,13 @@ main {
 
             &-price {
               background-color: #272b35;
-              border: 1px solid #181d26;
+              border: 1px solid $gray-secondary;
               border-radius: 8px;
               padding: 10px;
               display: flex;
+              flex-wrap: wrap;
               justify-content: space-between;
+              gap: 1rem;
               max-width: 300px;
 
               @media (max-width: 370px) {
@@ -100,10 +102,6 @@ main {
               }
 
               &-des {
-                @media (max-width: 370px) {
-                  margin-bottom: 13px;
-                }
-
                 .price {
                   font-size: clamp(1rem, 1rem + 3vw, 31px);
                   font-weight: bold;
@@ -117,9 +115,15 @@ main {
               .purchase {
                 background-color: #46c351;
                 padding: 14px 10px;
-                border-radius: 12px;
+                border-radius: 6px;
                 color: #fff;
                 cursor: pointer;
+                flex: 1;
+                transition: 0.2s ease-in;
+
+                &:hover {
+                  background-color: #38b000;
+                }
               }
             }
           }
@@ -133,8 +137,13 @@ main {
     height: 50px;
     width: 50px;
     background: #272b35;
-    border: 1px solid #181d26;
+    border: 1px solid $gray-secondary;
     border-radius: 15%;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      background: #90e0ef;
+    }
 
     &::before,
     &::after {
