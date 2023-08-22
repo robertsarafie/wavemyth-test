@@ -1,0 +1,22 @@
+$brand-primary: #a9b5cc;
+
+$gray-primary: #141922;
+$gray-secondary: #181d26;
+
+@mixin phone {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin burger {
+  @media screen and (max-width: 1047px) {
+    @content;
+  }
+}

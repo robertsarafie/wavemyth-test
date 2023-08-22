@@ -1,0 +1,182 @@
+main {
+  background-color: #1b212b;
+  padding: 60px 0;
+
+  .slide-container {
+    padding: 40px 0;
+
+    .slide-content {
+      padding: 0 65px;
+
+      @include phone {
+        padding: unset;
+      }
+
+      .card-wrapper {
+        align-items: center;
+
+        .card {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          background-color: #2d333d;
+          border: 1px solid #181d26;
+          min-height: 300px;
+          border-radius: 5px;
+          overflow: hidden;
+
+          @include burger {
+            grid-template-columns: 1fr;
+          }
+
+          .img {
+            position: relative;
+
+            .img-des {
+              position: absolute;
+              z-index: 10;
+              top: 10px;
+              left: 10px;
+
+              span {
+                font-weight: bold;
+                text-transform: uppercase;
+              }
+
+              p {
+                max-width: 150px;
+              }
+            }
+
+            img {
+              max-width: 100%;
+              width: 100%;
+              display: inherit;
+              height: 100%;
+              min-height: 400px;
+              object-fit: cover;
+              max-height: 350px;
+
+              @include burger {
+                width: 100%;
+                max-height: 250px;
+              }
+            }
+          }
+
+          .card-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &-des {
+              h1 {
+                font-size: 30px;
+                margin-bottom: 13px;
+              }
+
+              .card-des:nth-of-type(1) {
+                margin-bottom: 13px;
+              }
+
+              .card-des:last-child {
+                @include burger {
+                  margin-bottom: 13px;
+                }
+              }
+            }
+
+            &-price {
+              background-color: #272b35;
+              border: 1px solid #181d26;
+              border-radius: 8px;
+              padding: 10px;
+              display: flex;
+              justify-content: space-between;
+              max-width: 300px;
+
+              @media (max-width: 370px) {
+                flex-direction: column;
+              }
+
+              &-des {
+                @media (max-width: 370px) {
+                  margin-bottom: 13px;
+                }
+
+                .price {
+                  font-size: clamp(1rem, 1rem + 3vw, 31px);
+                  font-weight: bold;
+                }
+
+                .ticket {
+                  font-size: 14px;
+                }
+              }
+
+              .purchase {
+                background-color: #46c351;
+                padding: 14px 10px;
+                border-radius: 12px;
+                color: #fff;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-navBtn {
+    color: $brand-primary;
+    height: 50px;
+    width: 50px;
+    background: #272b35;
+    border: 1px solid #181d26;
+    border-radius: 15%;
+
+    &::before,
+    &::after {
+      font-size: 30px;
+    }
+  }
+
+  .swiper-button-nextV2 {
+    right: 0;
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  .swiper-button-prevV2 {
+    left: 0;
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  .swiper-pagination {
+    span {
+      background-color: $brand-primary;
+    }
+  }
+}

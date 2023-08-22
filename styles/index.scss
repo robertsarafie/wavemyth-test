@@ -1,0 +1,40 @@
+@import './fonts';
+
+// reset
+@import './reset';
+
+// variables
+@import './variables';
+
+// common
+@import './common/index';
+
+// homepage
+@import './homepage/index';
+
+body {
+  font-size: 16px;
+  font-family: 'Ubuntu';
+  color: $brand-primary;
+  overflow-x: hidden;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.inner-content {
+  padding: 0 330px;
+
+  @media (max-width: 1448px) {
+    padding: 0 100px;
+  }
+
+  @include phone {
+    padding: 0 40px;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

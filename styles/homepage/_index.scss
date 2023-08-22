@@ -1,0 +1,10 @@
+@import './slider';
+@import './home-content';
+
+section:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+section:last-child {
+  padding-bottom: 130px;
+}
